@@ -16,6 +16,7 @@ def isPrime(number):
 
 def uniquePrimeNumber(x):
     list=[]
+    x=abs(x)
     if x<2:
         return list
     else:
@@ -33,6 +34,6 @@ def uniquePrimeNumber(x):
 
 #z=1234567890000000
 #z=4849845
-z=969969
+z=-969969
 print(uniquePrimeNumber(z))
 print("The number of unique prime numbers for "+str(z)+" is "+str(len(uniquePrimeNumber(z))))
