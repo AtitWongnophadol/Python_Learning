@@ -27,17 +27,27 @@ def uniquePrimeNumber(x):
             list.append(2)
             z=x/2
         else:
-            z=x    
-        for i in range(3,int(z),2): 
-                if x%i==0:
-                    if isPrime(i): 
-                        list.append(i)
-                    x=x/i   
-        return list      
+            z=x
+        y=math.sqrt(z)
+        if y==int(y):
+            for i in range(3,int(y)+1,2): 
+                    if x%i==0:
+                        if isPrime(i): 
+                            list.append(i)
+                        x=x/i   
+            return list      
+        else:  
+            for i in range(3,int(z),2): 
+                    if x%i==0:
+                        if isPrime(i): 
+                            list.append(i)
+                        x=x/i   
+            return list      
 
 #z=1234567890000000
 #z=4849845
 #z=-969969
-z=-1769.439587345
+#z=1769
+z=3721
 print(uniquePrimeNumber(z))
 print("The number of unique prime numbers for "+str(z)+" is "+str(len(uniquePrimeNumber(z))))
