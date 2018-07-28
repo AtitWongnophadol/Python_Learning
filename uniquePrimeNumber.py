@@ -17,22 +17,22 @@ def isPrime(number):
 def uniquePrimeNumber(x):
     list=[]
     if x<2:
-        return 0
+        return list
     else:
         if x%2==0:
             list.append(2)
             z=x/2
-            n=z
-            for i in range(3,math.floor(math.sqrt(z)),2):
-                if n%i==0:
+        else:
+            z=x    
+        for i in range(3,math.floor(math.sqrt(z)),2): 
+                if x%i==0:
                     if isPrime(i): 
                         list.append(i)
-                    n=n/i    
-        return(list)            
+                    x=x/i   
+        return list          
 
-z=1234567890000000
+#z=1234567890000000
+#z=4849845
+z=969969
 print(uniquePrimeNumber(z))
-print("The number of unique prime numbers for "+str(z)+" is "+str(len(uniquePrimeNumber(1234567890000000))))
-
-
-
+print("The number of unique prime numbers for "+str(z)+" is "+str(len(uniquePrimeNumber(z))))
